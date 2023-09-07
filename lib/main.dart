@@ -12,11 +12,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.teal,
-        body: Padding(
-          padding: EdgeInsets.all(16.0),
+        body: SafeArea(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Spacer(),
               const CircleAvatar(
                 backgroundImage: AssetImage("../images/imran.jpg"),
                 radius: 50,
@@ -40,31 +39,31 @@ class MyApp extends StatelessWidget {
                   letterSpacing: 2.5,
                 ),
               ),
-              const Divider(
-                color: Colors.grey,
+              const SizedBox(
+                width: 150,
+                child: Divider(
+                  color: Colors.grey,
+                ),
               ),
               Card(
                 color: Colors.white,
                 margin:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 25),
                 child: Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Row(
-                    children: [
-                      const Icon(
-                        Icons.phone,
-                        color: Colors.teal,
+                  padding: const EdgeInsets.all(8.0),
+                  child: ListTile(
+                    leading: const Icon(
+                      Icons.phone,
+                      color: Colors.teal,
+                    ),
+                    title: Text(
+                      "+91 9120000012",
+                      style: TextStyle(
+                        color: Colors.teal.shade900,
+                        fontFamily: 'SourceSans3',
+                        fontSize: 20.0,
                       ),
-                      const SizedBox(width: 5),
-                      Text(
-                        "+91 9120000012",
-                        style: TextStyle(
-                          color: Colors.teal.shade900,
-                          fontFamily: 'SourceSans3',
-                          fontSize: 20.0,
-                        ),
-                      )
-                    ],
+                    ),
                   ),
                 ),
               ),
@@ -73,27 +72,23 @@ class MyApp extends StatelessWidget {
                 margin:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 25),
                 child: Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Row(
-                    children: [
-                      const Icon(
-                        Icons.email,
-                        color: Colors.teal,
+                  padding: const EdgeInsets.all(8.0),
+                  child: ListTile(
+                    leading: const Icon(
+                      Icons.email,
+                      color: Colors.teal,
+                    ),
+                    title: Text(
+                      "imran@test.com",
+                      style: TextStyle(
+                        color: Colors.teal.shade900,
+                        fontFamily: 'SourceSans3',
+                        fontSize: 20.0,
                       ),
-                      const SizedBox(width: 5),
-                      Text(
-                        "imran@test.com",
-                        style: TextStyle(
-                          color: Colors.teal.shade900,
-                          fontFamily: 'SourceSans3',
-                          fontSize: 20.0,
-                        ),
-                      )
-                    ],
+                    ),
                   ),
                 ),
               ),
-              const Spacer(),
             ],
           ),
         ),
